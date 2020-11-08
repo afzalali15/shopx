@@ -1,6 +1,18 @@
-# shopx
+# Flutter ShopX
+🎯 API integration | 📲 Staggered Grid View | 🔥 GetX<br>
+[![Discord](https://img.shields.io/discord/731616556622282814?logo=discord&logoColor=white)](https://discord.com/invite/nWFnTqP)
 
-A new Flutter project.
+<p align="center">
+  <img src="flutter_getx_shopx.png" alt="flutter getx api app" title="Screenshot">
+</p>
+
+![YouTube Video Votes](https://img.shields.io/youtube/likes/apPH1CCOtKQ?label=Likes&style=social) ![YouTube Video Views](https://img.shields.io/youtube/views/apPH1CCOtKQ?style=social)
+📹 Tutorial 👇🏼👇🏼👇🏼
+Integrate REST API with GetX | Flutter tutorial | Shopping app
+https://youtu.be/apPH1CCOtKQ
+
+ If you like my work, support me to create more! 😎👍<br>
+<a href="https://www.buymeacoffee.com/afzalali15" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50px" alt="Buy Me A Coffee"></a>
 
 ## Getting Started
 
