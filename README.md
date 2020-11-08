@@ -6,9 +6,9 @@
   <img src="flutter_getx_shopx.png" alt="flutter getx api app" title="Screenshot">
 </p>
 
-![YouTube Video Votes](https://img.shields.io/youtube/likes/apPH1CCOtKQ?label=Likes&style=social) ![YouTube Video Views](https://img.shields.io/youtube/views/apPH1CCOtKQ?style=social)
-📹 Tutorial 👇🏼👇🏼👇🏼
-Integrate REST API with GetX | Flutter tutorial | Shopping app
+![YouTube Video Votes](https://img.shields.io/youtube/likes/apPH1CCOtKQ?label=Likes&style=social) ![YouTube Video Views](https://img.shields.io/youtube/views/apPH1CCOtKQ?style=social)<br>
+<img align="left" alt="CodeX | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" color />Tutorial 👇🏼👇🏼👇🏼<br>
+Integrate REST API with GetX | Flutter tutorial | Shopping app<br>
 https://youtu.be/apPH1CCOtKQ
 
  If you like my work, support me to create more! 😎👍<br>
