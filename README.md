@@ -11,6 +11,18 @@
 Integrate REST API with GetX | Flutter tutorial | Shopping app<br>
 https://youtu.be/apPH1CCOtKQ
 
+<hr>
+
+🔥 Rive Animation | 🌃 Dark Theme <br> (branch : dark_theme)
+<p align="center">
+  <img src="flutter_shopx_dark_theme.jpg" alt="flutter dark theme and rive animation" title="Thumbnail">
+</p>
+
+![YouTube Video Views](https://img.shields.io/youtube/views/LK0jsoJs2lU?style=social) ![YouTube Video Votes](https://img.shields.io/youtube/likes/LK0jsoJs2lU?label=Likes&style=social) <br>
+<img align="left" alt="CodeX | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" color />**Tutorial** 👇🏼👇🏼👇🏼<br>
+Weekly Livestream | Dark theme animation with Rive 2.0<br>
+https://youtu.be/LK0jsoJs2lU
+
  If you like my work, support me to create more! 😎👍<br>
 <a href="https://www.buymeacoffee.com/afzalali15" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50px" alt="Buy Me A Coffee"></a>
 
