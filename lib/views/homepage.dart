@@ -5,6 +5,8 @@ import 'package:get/instance_manager.dart';
 import 'package:shopx/controllers/productcontroller.dart';
 import 'package:shopx/views/product_tile.dart';
 
+import 'settings_page.dart';
+
 class HomePage extends StatelessWidget {
   final ProductController productController = Get.put(ProductController());
 
@@ -17,6 +19,14 @@ class HomePage extends StatelessWidget {
           Icons.arrow_back_ios,
         ),
         actions: [
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+            ),
+            onPressed: () {
+              Get.to(SettingsPage());
+            },
+          ),
           IconButton(
             icon: Icon(
               Icons.shopping_cart,
