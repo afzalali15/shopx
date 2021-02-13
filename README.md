@@ -11,6 +11,8 @@
 Integrate REST API with GetX | Flutter tutorial | Shopping app<br>
 https://youtu.be/apPH1CCOtKQ
 
+<hr>
+
 🔥 Rive Animation | 🌃 Dark Theme <br> (branch : dark_theme)
 <p align="center">
   <img src="flutter_shopx_dark_theme.jpg" alt="flutter dark theme and rive animation" title="Thumbnail">
