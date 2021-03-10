@@ -17,7 +17,7 @@ class ProductController extends GetxController {
       isLoading(true);
       var products = await RemoteServices.fetchProducts();
       if (products != null) {
-        productList.value = products;
+        productList.assignAll(products);
       }
     } finally {
       isLoading(false);
