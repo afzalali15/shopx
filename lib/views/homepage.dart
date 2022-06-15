@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
-import 'package:shopx/controllers/product_controller.dart';
-import 'package:shopx/views/product_tile.dart';
+import 'package:shopx_updated/controllers/product_controller.dart';
+import 'package:shopx_updated/views/product_tile.dart';
 
 class HomePage extends StatelessWidget {
   final ProductController productController = Get.put(ProductController());
@@ -13,12 +12,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: Icon(
+        leading: const Icon(
           Icons.arrow_back_ios,
         ),
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.shopping_cart,
             ),
             onPressed: () {},
@@ -31,7 +30,7 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Text(
                     'ShopX',
                     style: TextStyle(
@@ -41,17 +40,18 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                    icon: Icon(Icons.view_list_rounded), onPressed: () {}),
-                IconButton(icon: Icon(Icons.grid_view), onPressed: () {}),
+                    icon: const Icon(Icons.view_list_rounded),
+                    onPressed: () {}),
+                IconButton(icon: const Icon(Icons.grid_view), onPressed: () {}),
               ],
             ),
           ),
           Expanded(
             child: Obx(() {
-              if (productController.isLoading.value)
-                return Center(child: CircularProgressIndicator());
-              else
-                return StaggeredGridView.countBuilder(
+              if (productController.isLoading.value) {
+                return const Center(child: CircularProgressIndicator());
+              } else {
+                return AlignedGridView.count(
                   crossAxisCount: 2,
                   itemCount: productController.productList.length,
                   crossAxisSpacing: 16,
@@ -59,8 +59,8 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ProductTile(productController.productList[index]);
                   },
-                  staggeredTileBuilder: (index) => StaggeredTile.fit(1),
                 );
+              }
             }),
           )
         ],
