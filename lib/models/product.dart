@@ -5,11 +5,9 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 
-List<Product> productFromJson(String str) =>
-    List<Product>.from(json.decode(str).map((x) => Product.fromJson(x)));
+List<Product> productFromJson(String str) => List<Product>.from(json.decode(str).map((x) => Product.fromJson(x)));
 
-String productToJson(List<Product> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String productToJson(List<Product> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Product {
   Product({
@@ -53,9 +51,11 @@ class Product {
   String? productApiUrl;
   String? apiFeaturedImage;
   List<ProductColor>? productColors;
-
+  
+  // reactive variable using getx
   var isFavorite = false.obs;
-
+  
+  // converts a map object to a Product object
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json["id"],
         brand: brandValues.map[json["brand"]],
@@ -78,7 +78,8 @@ class Product {
         productColors: List<ProductColor>.from(
             json["product_colors"].map((x) => ProductColor.fromJson(x))),
       );
-
+  
+  // Product to json
   Map<String, dynamic> toJson() => {
         "id": id,
         "brand": brandValues.reverse![brand!],
@@ -103,7 +104,7 @@ class Product {
       };
 }
 
-enum Brand { MAYBELLINE }
+enum Brand { MAYBELLINE }           // An enumeration is used for defining named constant values. 
 
 final brandValues = EnumValues({"maybelline": Brand.MAYBELLINE});
 
@@ -115,12 +116,15 @@ class ProductColor {
 
   String? hexValue;
   String? colourName;
-
+    
+  // In order for a factory to return a new class instance, it must first call a generative constructor.
+  // with a named constructor
   factory ProductColor.fromJson(Map<String, dynamic> json) => ProductColor(
         hexValue: json["hex_value"],
         colourName: json["colour_name"],
       );
-
+    
+  // This function converts the dart "map" to a json a file
   Map<String, dynamic> toJson() => {
         "hex_value": hexValue,
         "colour_name": colourName,
