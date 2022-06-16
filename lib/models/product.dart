@@ -5,11 +5,9 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 
-List<Product> productFromJson(String str) =>
-    List<Product>.from(json.decode(str).map((x) => Product.fromJson(x)));
+List<Product> productFromJson(String str) => List<Product>.from(json.decode(str).map((x) => Product.fromJson(x)));
 
-String productToJson(List<Product> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String productToJson(List<Product> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Product {
   Product({
@@ -34,28 +32,30 @@ class Product {
     this.productColors,
   });
 
-  int id;
-  Brand brand;
-  String name;
-  String price;
+  int? id;
+  Brand? brand;
+  String? name;
+  String? price;
   dynamic priceSign;
   dynamic currency;
-  String imageLink;
-  String productLink;
-  String websiteLink;
-  String description;
-  double rating;
-  String category;
-  String productType;
-  List<dynamic> tagList;
-  DateTime createdAt;
-  DateTime updatedAt;
-  String productApiUrl;
-  String apiFeaturedImage;
-  List<ProductColor> productColors;
-
+  String? imageLink;
+  String? productLink;
+  String? websiteLink;
+  String? description;
+  double? rating;
+  String? category;
+  String? productType;
+  List<dynamic>? tagList;
+  DateTime? createdAt;
+  DateTime? updatedAt;
+  String? productApiUrl;
+  String? apiFeaturedImage;
+  List<ProductColor>? productColors;
+  
+  // reactive variable using getx
   var isFavorite = false.obs;
-
+  
+  // converts a map object to a Product object
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json["id"],
         brand: brandValues.map[json["brand"]],
@@ -67,8 +67,8 @@ class Product {
         productLink: json["product_link"],
         websiteLink: json["website_link"],
         description: json["description"],
-        rating: json["rating"] == null ? null : json["rating"].toDouble(),
-        category: json["category"] == null ? null : json["category"],
+        rating: json["rating"]?.toDouble(),
+        category: json["category"],
         productType: json["product_type"],
         tagList: List<dynamic>.from(json["tag_list"].map((x) => x)),
         createdAt: DateTime.parse(json["created_at"]),
@@ -78,10 +78,11 @@ class Product {
         productColors: List<ProductColor>.from(
             json["product_colors"].map((x) => ProductColor.fromJson(x))),
       );
-
+  
+  // Product to json
   Map<String, dynamic> toJson() => {
         "id": id,
-        "brand": brandValues.reverse[brand],
+        "brand": brandValues.reverse![brand!],
         "name": name,
         "price": price,
         "price_sign": priceSign,
@@ -90,20 +91,20 @@ class Product {
         "product_link": productLink,
         "website_link": websiteLink,
         "description": description,
-        "rating": rating == null ? null : rating,
-        "category": category == null ? null : category,
+        "rating": rating,
+        "category": category,
         "product_type": productType,
-        "tag_list": List<dynamic>.from(tagList.map((x) => x)),
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
+        "tag_list": List<dynamic>.from(tagList!.map((x) => x)),
+        "created_at": createdAt!.toIso8601String(),
+        "updated_at": updatedAt!.toIso8601String(),
         "product_api_url": productApiUrl,
         "api_featured_image": apiFeaturedImage,
         "product_colors":
-            List<dynamic>.from(productColors.map((x) => x.toJson())),
+            List<dynamic>.from(productColors!.map((x) => x.toJson())),
       };
 }
 
-enum Brand { MAYBELLINE }
+enum Brand { MAYBELLINE }           // An enumeration is used for defining named constant values. 
 
 final brandValues = EnumValues({"maybelline": Brand.MAYBELLINE});
 
@@ -113,30 +114,31 @@ class ProductColor {
     this.colourName,
   });
 
-  String hexValue;
-  String colourName;
-
+  String? hexValue;
+  String? colourName;
+    
+  // In order for a factory to return a new class instance, it must first call a generative constructor.
+  // with a named constructor
   factory ProductColor.fromJson(Map<String, dynamic> json) => ProductColor(
         hexValue: json["hex_value"],
-        colourName: json["colour_name"] == null ? null : json["colour_name"],
+        colourName: json["colour_name"],
       );
-
+    
+  // This function converts the dart "map" to a json a file
   Map<String, dynamic> toJson() => {
         "hex_value": hexValue,
-        "colour_name": colourName == null ? null : colourName,
+        "colour_name": colourName,
       };
 }
 
 class EnumValues<T> {
   Map<String, T> map;
-  Map<T, String> reverseMap;
+  Map<T, String>? reverseMap;
 
   EnumValues(this.map);
 
-  Map<T, String> get reverse {
-    if (reverseMap == null) {
-      reverseMap = map.map((k, v) => new MapEntry(v, k));
-    }
+  Map<T, String>? get reverse {
+    reverseMap ??= map.map((k, v) => MapEntry(v, k));
     return reverseMap;
   }
 }
