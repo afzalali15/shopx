@@ -23,7 +23,7 @@ https://youtu.be/apPH1CCOtKQ
 Weekly Livestream | Dark theme animation with Rive 2.0<br>
 https://youtu.be/LK0jsoJs2lU
 
- If you like my work, support me to create more! 😎👍<br>
+ If you like my work, support me to create more! 😎👍<b>
 <a href="https://www.buymeacoffee.com/afzalali15" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50px" alt="Buy Me A Coffee"></a>
 
 ## Getting Started
